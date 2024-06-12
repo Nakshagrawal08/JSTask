@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identites</title>
+</head>
+<body >
+    <div >
+        <input type="number" id="no1"  placeholder="Enter 1st No"><br><br>
+        <input type="number" id="no2"  placeholder="Enter 2nd No"><br><br>
+        <div id="result" >Result: </div>
+        <div >
+            <button  onclick="calc('1')">A^2 + B^2</button>
+            <button  onclick="calc('2')">A^3 + B^3</button>
+            <button  onclick="calc('5')">A^2 * B^2</button>
+            <button  onclick="calc('6')">A^3 * B^3</button>
+        </div>
+        <div>
+            <button  onclick="calc('3')">(A+B)^2</button>
+            <button  onclick="calc('4')">(A-B)^2</button>
+            <button  onclick="calc('7')">(A+B)^3</button>
+            <button  onclick="calc('8')">(A-B)^3</button>
+        </div>
+    </div>
+
+    <script>
+        function calc(operator) {
+            const no1 = parseInt(document.getElementById('no1').value);
+            const no2 = parseInt(document.getElementById('no2').value);
+            let result;
+
+              switch (operator) {
+                    case '1':
+                        result = no1**2 + no2**2;
+                        break;
+                    case '2':
+                        result = no1**3 + no2**3;
+                        break;
+                    case '5':
+                        result = no1**2 * no2**2;
+                        break;
+                    case '6':
+                        result = no1**3 * no2**3;
+                        break;
+                    case '3':
+                        result = (no1 + no2)**2;
+                        break;
+                    case '4':
+                        result = (no1 - no2)**2;
+                        break;
+                    case '7':
+                        result = (no1 + no2)**3;
+                        break;
+                    case '8':
+                        result = (no1 - no2)**3;
+                        break;
+                    default:
+                        result = 'Invalid operator';
+                }
+            
+
+            document.getElementById('result').innerText = 'Result: ' + result;
+            
+            // Clear the input fields
+            document.getElementById('no1').value = '';
+            document.getElementById('no2').value = '';
+        }
+    </script>
+</body>
+</html>

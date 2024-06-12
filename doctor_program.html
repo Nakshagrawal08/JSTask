@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Summary</title>
+</head>
+<body >
+    <div >
+        <h3>Ram's Shift</h3>
+        <input type="number" id="no1"  placeholder="No Of Patients" value="40"><br><br>
+        <input type="number" id="no2"  placeholder="Consultation Fee (Each)" value="300"><br><br>
+        <h3>Shyam's Shift</h3>
+        <input type="number" id="no3"  placeholder="No Of Patients" value="30"><br><br>
+        <input type="number" id="no4"  placeholder="Consultation Fee (Each)" value="380"><br><br>
+        <div >
+            <button onclick="summary()">Get Summary</button>
+         </div>
+        <h3 id="result1" > </h3>
+        <h3 id="result2" > </h3>
+        <h3 id="result3" > </h3>
+        <h3 id="result4" > </h3>
+        <h3 id="result5" > </h3>
+       
+    </div>
+
+    <script>
+        function summary() {
+            const no1 = parseInt(document.getElementById('no1').value);
+            const no2 = parseInt(document.getElementById('no2').value);
+            const no3 = parseInt(document.getElementById('no3').value);
+            const no4 = parseInt(document.getElementById('no4').value);
+
+            const docfee = (no1*no2)+(no3*no4)
+            document.getElementById('result1').innerText ="Total Doctor's fee for a day : " + docfee + " /-";
+
+            const Rfee = (no1*no2)
+            document.getElementById('result2').innerText ="Total Collected Fee By Ram : " + Rfee + " /-";
+
+            const Sfee =(no3*no4)
+            document.getElementById('result3').innerText ="Total Collected fee By Shyam : " + Sfee + " /-";
+
+            (Rfee>Sfee) ? document.getElementById('result4').innerText ="Congratulations Ram for better Performance" :document.getElementById('result4').innerText ="Congratulations Shyam for better Performance";
+
+           if (Rfee>Sfee) {
+            const diff= Rfee-Sfee
+            document.getElementById('result5').innerText ="Shyam should have to earn more "+diff+"/- then Ram for better performance."
+           }
+           else{
+            const diff= Sfee-Rfee
+            document.getElementById('result5').innerText ="Ram should have to earn more "+diff+"/- then Shyam for better performance."
+           }
+            
+            // Clear the input fields
+            document.getElementById('no1').value = '';
+            document.getElementById('no2').value = '';
+            document.getElementById('no3').value = '';
+            document.getElementById('no4').value = '';
+        }
+    </script>
+</body>
+</html>

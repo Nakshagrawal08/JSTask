@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summation & Factorial</title>
+</head>
+<body >
+    <div >
+        <input type="number" id="no1"  placeholder="Enter 1st No"><br><br>
+        <input type="number" id="no2"  placeholder="Enter Last No"><br><br>
+        <div id="result" >Result: </div>
+        <div >
+            <button  onclick="calc('1')">Summation</button>
+            <button  onclick="calc('2')">Factorial</button>
+        </div>
+    </div>
+
+    <script>
+        function calc(operator) {
+            const no1 = parseInt(document.getElementById('no1').value);
+            const no2 = parseInt(document.getElementById('no2').value);
+            let Sresult=0;
+            let Fresult=1;
+
+              switch (operator) {
+                    case '1':
+                      for (let i = no1; i <=no2; i++) {
+                        Sresult=Sresult+i;
+                        
+                      }
+                      document.getElementById('result').innerText = 'Result: ' + Sresult;
+                        break;
+                    case '2':
+                    for (let i = no1; i <=no2; i++) {
+                        Fresult=Fresult*i;
+                        
+                      }
+                      document.getElementById('result').innerText = 'Result: ' + Fresult;
+                        break;
+                   
+                    default:
+                        result = 'Invalid operator';
+                }
+            // Clear the input fields
+            document.getElementById('no1').value = '';
+            document.getElementById('no2').value = '';
+        }
+    </script>
+</body>
+</html>
