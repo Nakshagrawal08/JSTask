@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bday Month</title>
+</head>
+<body >
+    <div >
+        <div >
+        <input type="number" id="month"  placeholder="Enter Birthday Month"><br>
+        <button  onclick="Month(document.getElementById('month').value)">Submit</button>
+        </div>
+        <h1 id="result"></h1>
+    </div>
+
+    <script>
+        function Month(operator) {
+
+              switch (operator) {
+                    case '1':
+                        result = "january"
+                        break;
+                    case '2':
+                        result = "february"
+                        break;
+                    case '3':
+                        result = "mmarch";
+                        break;
+                    case '4':
+                        result = "april"
+                        break;
+                    default:
+                        result = 'Invalid operator';
+                }
+            
+
+            document.getElementById('result').innerText = 'Result: ' + result;
+            
+            // Clear the input fields
+            document.getElementById('no1').value = '';
+            document.getElementById('no2').value = '';
+        }
+    </script>
+</body>
+</html>

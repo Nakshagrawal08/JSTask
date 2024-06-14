@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Traffic Signal</title>
+</head>
+<body class=" mx-16 my-10" >
+    <div class=" rounded-full w-40 h-40 bg-red-600 mb-8" id="light" >
+
+    </div>
+        <button id="chng" value="Go" onclick="
+            let light = document.getElementById('light')
+            let text = document.getElementById('chng')
+            console.log(text.value)
+            if (text.value == 'Go') {
+                text.innerText='Stop'
+                light.style.backgroundColor='green'
+                text.value='Stop'
+            } else {
+                text.innerHTML='Go'
+                light.style.backgroundColor='red'
+                text.value='Go'
+            }" class="bg-blue-500 text-white p-2 w-20">Go</button>
+</body>
+</html>
